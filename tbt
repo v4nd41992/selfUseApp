@@ -1,0 +1,25 @@
+import time
+
+def tabata_timer():
+    positions = 4
+    sets = 8  # 4 positions x 2 sets
+    work_duration = 20  # seconds
+    rest_duration = 5  # seconds
+
+    total_duration = (work_duration * positions * sets) + (rest_duration * (positions - 1) * sets)
+    print("Tabata workout starting...")
+    print(f"Total duration: {total_duration} seconds")
+
+    for set_num in range(1, sets + 1):
+        print(f"Set {set_num}")
+        for pos_num in range(1, positions + 1):
+            print(f"Position {pos_num}")
+            print(f"Work for {work_duration} seconds")
+            time.sleep(work_duration)
+            if pos_num < positions:
+                print(f"Rest for {rest_duration} seconds")
+                time.sleep(rest_duration)
+    
+    print("Tabata workout completed!")
+
+tabata_timer()
